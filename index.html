@@ -230,7 +230,7 @@ body.js .rv.on{opacity:1;transform:none}
     <!-- стол -->
     <g id="tableG">
      <rect id="cloth" x="120" y="300" width="0" height="150" fill="#FCF9F0"/>
-     <rect x="112" y="300" width="0" height="150" fill="#DBE2DC" opacity=".5"/>
+     <rect id="lip" x="120" y="450" width="0" height="6" fill="#DBE2DC"/>
      <rect x="130" y="455" width="950" height="26" fill="#103B15"/>
      <!-- свечи -->
      <g id="candles"></g>
@@ -375,7 +375,7 @@ document.body.classList.add('js');
 /* ===== вау-сцена: банкет накрывается ===== */
 (function(){
  var svg=document.getElementById('wow');
- var cloth=document.getElementById('cloth'),clothShade=svg.querySelectorAll('#tableG rect')[1];
+ var cloth=document.getElementById('cloth'),clothShade=document.getElementById('lip');
  var bulbsG=document.getElementById('bulbs'),candG=document.getElementById('candles'),
      plG=document.getElementById('plates'),glG=document.getElementById('glasses'),cutG=document.getElementById('cutlery');
  var cloche=document.getElementById('cloche'),cloDome=document.getElementById('cloDome'),cloKnob=document.getElementById('cloKnob'),cloFood=document.getElementById('cloFood');
@@ -435,7 +435,7 @@ document.body.classList.add('js');
   var fin=seg(q,.94,1);
   /* скатерть */
   cloth.setAttribute('width',960*ease(cl));
-  clothShade.setAttribute('x',112);clothShade.setAttribute('width',984*ease(cl));
+  clothShade.setAttribute('width',960*ease(cl));
   /* свечи + гирлянда */
   candles.forEach(function(f,i){
    var on=seg(cnd,i*.18,(i+1)*.18);
